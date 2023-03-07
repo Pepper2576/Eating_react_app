@@ -8,16 +8,20 @@ const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 // use to fetch data from an API
 const AppProvider = ({ children }) => {
+	// useStates for meals
 	const [meals, setMeals] = useState([]);
+	// axios fetch method
 	const fetchMeals = async (url) => {
 		try {
+			// const {data} gets the data element of the API array
 			const { data } = await axios(url);
+			// Uses teh setMeals element of the useState to set the displayed API data
 			setMeals(data.meals);
 		} catch (e) {
 			console.log(e.responce);
 		}
 	};
-
+	// uses the const to set the URL of the API
 	useEffect(() => {
 		fetchMeals(allMealsUrl);
 	}, []);
