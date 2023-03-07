@@ -1,13 +1,19 @@
 import "./App.css";
+import Fav from "./conponents/favorites";
+import Meals from "./conponents/meals";
+import Modal from "./conponents/modal";
+import Search from "./conponents/search";
 
+// App component for root html div
 function App() {
 	// app components
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<h1>Test</h1>
-			</header>
-		</div>
+		<main>
+			<Search />
+			<Fav />
+			<Meals />
+			<Modal />
+		</main>
 	);
 }
 
