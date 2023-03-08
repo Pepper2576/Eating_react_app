@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
 			console.log(e.responce);
 		}
 	};
-	// uses the const to set the URL of the API
+	// uses the const to set the URL of the API must be in the useEffect or you'll get infernate loop
 	useEffect(() => {
 		fetchMeals(allMealsUrl);
 	}, []);
